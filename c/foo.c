@@ -4,21 +4,30 @@
 #include <stdio.h>
 
 int i = 0;
+int count = 1000000;
 
 // Note the return type: void*
 void* incrementingThreadFunction(){
-    // TODO: increment i 1_000_000 times
+    for (int j = 0; j < count; j++){
+	i++;
+    }
     return NULL;
 }
 
 void* decrementingThreadFunction(){
-    // TODO: decrement i 1_000_000 times
+    for (int k = 0; k < count; k++){
+	i--;
+    }
     return NULL;
 }
 
 
 int main(){
     // TODO: declare incrementingThread and decrementingThread (hint: google pthread_create)
+
+    pthread_t incrementingThread;
+    pthread_t decrementingThread;
+
     pthread_create(&incrementingThread, NULL, incrementingThreadFunction, NULL);
     pthread_create(&decrementingThread, NULL, decrementingThreadFunction, NULL);
     
