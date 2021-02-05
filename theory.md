@@ -16,16 +16,17 @@ Exercise 1 - Theory questions
  > Concurrent programs are famous for being a pain to work with.
  
  ### What is the conceptual difference between threads and processes?
- > *Your answer here*
+ > A process is a program under excecution. The process is complex and not lightweight, whereas a thread is lightweight and a part of a process and a process can have multiple threads. 
  
  ### Some languages support "fibers" (sometimes called "green threads") or "coroutines"? What are they?
- > *Your answer here*
+ > Fibers are particularly lightweight threads that use cooperative multitasking, not preemptive multitasking. Preemtive multitasking is where the task is claiming the processors and pausing the current task. Cooperative multitasking is a bit more gentle approach where the task is asking to use the processor when the current task is done or on a pause. 
  
  ### What is the Go-language's "goroutine"? A C/POSIX "pthread"?
- > *Your answer here*
+ > A "goroutine" is a lightweight thread in go. It is capaple of running cocurrently with other goroutines. 
+ A pthread is basically the same thing, but works independently of any programming language.
  
  ### In Go, what does `func GOMAXPROCS(n int) int` change? 
- > *Your answer here*
+ > The function changes the maximum number of processors that can work simultaneously.
 
 
 
